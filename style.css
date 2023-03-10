@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: rgb(161, 161, 248);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.dict-wrapper {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.dictionary {
+  width: 420px;
+  border-radius: 7px;
+  background: #fff;
+  padding: 25px 28px 45px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+  position: absolute;
+  left: 20%;
+}
+
+.dict-wrapper h1,
+.trans-wrapper h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin: 40px 10px;
+}
+
+::selection {
+  color: #fff;
+  background: #4d59fb;
+}
+
+.dict-search {
+  position: relative;
+  margin: 15px 0 18px;
+}
+.dict-search input {
+  height: 53px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 0 42px;
+  border: 1px solid #999;
+}
+
+.dict-search input:focus {
+  padding: 0 41px;
+  border: 2px solid #4d59fb;
+}
+.dict-search input::placeholder {
+  color: #b8b8b8;
+}
+.dict-search :where(i, span) {
+  position: absolute;
+  top: 50%;
+  color: #999;
+  transform: translateY(-50%);
+}
+
+.dict-search i {
+  left: 18px;
+  pointer-events: none;
+  font-size: 16px;
+}
+.dict-search input:focus ~ i {
+  color: #4d59fb;
+}
+.dict-search span {
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+}
+.dict-search input:valid ~ span {
+  display: block;
+}
+
+.dict-wrapper .dict-info-text {
+  font-size: 13px;
+  color: #9a9a9a;
+  margin: -3px 0 -10px;
+}
+.dict-wrapper.active .dict-info-text {
+  display: none;
+}
+.dict-info-text span {
+  font-weight: 500;
+}
+.dict-wrapper ul {
+  height: 0;
+  opacity: 0;
+  padding-right: 1px;
+  overflow-y: hidden;
+  transition: all 0.2s ease;
+}
+
+.dict-wrapper.active ul {
+  opacity: 1;
+  height: 303px;
+}
+.dict-wrapper ul li {
+  display: flex;
+  list-style: none;
+  margin-bottom: 14px;
+  align-items: center;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #d9d9d9;
+  justify-content: space-between;
+}
+ul li:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+ul .word p {
+  font-size: 22px;
+  font-weight: 500;
+}
+ul .word span {
+  font-size: 12px;
+  color: #989898;
+}
+ul .word i {
+  color: #999;
+  font-size: 15px;
+  cursor: pointer;
+}
+ul .content {
+  max-height: 215px;
+  overflow-y: auto;
+}
+ul .content::-webkit-scrollbar {
+  width: 0px;
+}
+.content li .details {
+  padding-left: 10px;
+  border-radius: 4px 0 0 4px;
+  border-left: 3px solid #4d59fb;
+}
+.content li p {
+  font-size: 17px;
+  font-weight: 500;
+}
+.content li span {
+  font-size: 15px;
+  color: #7e7e7e;
+}
+.content .synonyms .list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.content .synonyms span {
+  cursor: pointer;
+  margin-right: 5px;
+  text-decoration: underline;
+}
+/* /////////////////////////////////////////////-TRANSLATOR-//////////////////////////////////// */
+.translator {
+  width: 600px;
+  padding: 30px;
+  position: absolute;
+  right: 60px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
+}
+.trans-wrapper {
+  width: 50%;
+  height: 100%;
+}
+
+.wrapper {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.wrapper .text-input {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+.text-input .to-text {
+  border-radius: 0px;
+  border-left: 1px solid #ccc;
+}
+.text-input textarea {
+  height: 250px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.text-input textarea::placeholder {
+  color: #b7b6b6;
+}
+.controls,
+li,
+.icons,
+.icons i {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.controls {
+  list-style: none;
+  padding: 12px 15px;
+}
+.controls .row .icons {
+  width: 38%;
+}
+.controls .row .icons i {
+  width: 50px;
+  color: #adadad;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  justify-content: center;
+}
+.controls .row.from .icons {
+  padding-right: 15px;
+  border-right: 1px solid #ccc;
+}
+.controls .row.to .icons {
+  padding-left: 15px;
+  border-left: 1px solid #ccc;
+}
+.controls .row select {
+  color: #333;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: none;
+  padding-left: 5px;
+}
+.text-input textarea::-webkit-scrollbar {
+  width: 4px;
+}
+.controls .row select::-webkit-scrollbar {
+  width: 8px;
+}
+.text-input textarea::-webkit-scrollbar-track,
+.controls .row select::-webkit-scrollbar-track {
+  background: #fff;
+}
+.text-input textarea::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 8px;
+}
+.controls .row select::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 8px;
+  border-right: 2px solid #ffffff;
+}
+.controls .exchange {
+  color: #adadad;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+.controls i:active {
+  transform: scale(0.9);
+}
+.container button {
+  width: 100%;
+  padding: 14px;
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 17px;
+  border-radius: 5px;
+  background: #5372f0;
+}
+@media (max-width: 660px) {
+  .container {
+    padding: 20px;
+  }
+  .wrapper .text-input {
+    flex-direction: column;
+  }
+  .text-input .to-text {
+    border-left: 0px;
+    border-top: 1px solid #ccc;
+  }
+  .text-input textarea {
+    height: 200px;
+  }
+  .controls .row .icons {
+    display: none;
+  }
+  .container button {
+    padding: 13px;
+    font-size: 16px;
+  }
+  .controls .row select {
+    font-size: 16px;
+  }
+  .controls .exchange {
+    font-size: 14px;
+  }
+}

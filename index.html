@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary and Translator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="dict-wrapper">
+        <div class="dict-header">
+          <h1>Dictionary</h1>
+          <div class="dictionary">
+            <div class="dict-search">
+              <input
+                type="text"
+                placeholder="Please Enter the Word"
+                required
+                spellcheck="false"
+              />
+              <i class="fas fa-search"></i>
+              <span class="material-icons">close</span>
+            </div>
+            <p class="dict-info-text">
+              Search any existing word and press enter to get meaning and
+              related example, synonyms, etc.
+            </p>
+            <ul>
+              <li class="word">
+                <div class="details">
+                  <p>__</p>
+                  <span>_ _</span>
+                </div>
+                <i class="fas fa-volume-up"></i>
+              </li>
+              <div class="content">
+                <li class="meaning">
+                  <div class="details">
+                    <p>Meaning</p>
+                    <span>___</span>
+                  </div>
+                </li>
+                <li class="example">
+                  <div class="details">
+                    <p>Example</p>
+                    <span>___</span>
+                  </div>
+                </li>
+                <li class="synonyms">
+                  <div class="details">
+                    <p>Synonyms</p>
+                    <div class="list"></div>
+                  </div>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="trans-wrapper">
+        <div class="trans-header">
+          <h1>Translator</h1>
+          <div class="translator">
+            <div class="wrapper">
+              <div class="text-input">
+                <textarea
+                  spellcheck="false"
+                  class="from-text"
+                  placeholder="Enter text"
+                ></textarea>
+                <textarea
+                  spellcheck="false"
+                  readonly
+                  disabled
+                  class="to-text"
+                  placeholder="Translation"
+                ></textarea>
+              </div>
+              <ul class="controls">
+                <li class="row from">
+                  <div class="icons">
+                    <i id="from" class="fas fa-volume-up"></i>
+                    <i id="from" class="fas fa-copy"></i>
+                  </div>
+                  <select></select>
+                </li>
+                <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+                <li class="row to">
+                  <select></select>
+                  <div class="icons">
+                    <i id="to" class="fas fa-volume-up"></i>
+                    <i id="to" class="fas fa-copy"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <button>Translate Text</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="countries.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
